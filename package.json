@@ -1,0 +1,20 @@
+{
+  "name": "applying-tdd-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stockPort.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon stockPort.js",
+    "start": "node stockPort.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jest": "^29.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
