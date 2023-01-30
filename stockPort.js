@@ -6,25 +6,32 @@ function createPortfolio(){
 function isEmpty(stocks){
     return stocks['stocks_list'].length === 0;
 }
-/*
-function addStock(stock){
-    stock['id'] = uniqueIdGenerator();
-    stocks['stocks_list'].push(stock);
+
+function uniqueStock(stocks){
+    return stocks['stocks_list'].length;
 }
 
-const deleteStockById = (id) => { 
-    return stocks['stocks_list'].filter( (id) => stocks['id'] !== id); 
+function addStock(port, ticker_entry, share_entry) {
+    port['stocks_list'].push({ticker: ticker_entry, shares: share_entry})
 }
 
-function uniqueIdGenerator(){
-    id = Math.floor(100000 + Math.random() * 900000);
-    for (let i = 0; i < users['users_list'].length; i++) {
-        if (id === users['users_list'][i]['id']) {
-            i = 0;
-            id = Math.floor(100000 + Math.random() * 900000);
+function sellShares(port, ticker_entry, share_entry) { 
+    //port['stocks_list'].filter( (port) => port['ticker'] === ticker_entry); 
+    for (var i = 0; i < port['stocks_list'].length; i++) {
+        if(port['stocks_list'][i]['ticker'] === ticker_entry) {
+            port['stocks_list'][i]['shares'] -= share_entry;
+            return;
         }
     }
-    return id.toString()
-}*/
+}
+
+const findSharesByTicker = (port, ticker) => {  
+   res = port['stocks_list'].filter( (stock) => stock['ticker'] === ticker); 
+   return res[0]['shares'];
+}
 exports.createPortfolio = createPortfolio;
 exports.isEmpty = isEmpty;
+exports.uniqueStock = uniqueStock;
+exports.addStock = addStock;
+exports.sellShares = sellShares;
+exports.findSharesByTicker= findSharesByTicker;
