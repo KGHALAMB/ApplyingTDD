@@ -2,11 +2,11 @@
   "name": "applying-tdd-lab",
   "version": "1.0.0",
   "description": "",
-  "main": "stockPort.js",
+  "main": "Portfolio.js",
   "scripts": {
     "test": "jest",
-    "dev": "nodemon stockPort.js",
-    "start": "node stockPort.js"
+    "dev": "nodemon Portfolio.js",
+    "start": "node Portfolio.js"
   },
   "author": "",
   "license": "ISC",
