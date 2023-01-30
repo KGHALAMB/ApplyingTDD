@@ -79,5 +79,17 @@ test('remove 0 or less stocks from list', () => {
     expect(target.stocks['stocks_list']).toStrictEqual(port.stocks);
 });
 
+test('sales Sell Error', () => {
+    const target = new myFunctions.Portfolio();
+    const port = new myFunctions.Portfolio();
+    port.addStock('APP', 123);
+    port.addStock('GME', 23);
+    port.addStock('MCS', 33);
+    expect(() => {
+        port.sellShares('MCS', 55);
+      }).toThrow("ShareSaleException")
+});
+
+
 
 
